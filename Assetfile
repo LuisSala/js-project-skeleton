@@ -1,5 +1,5 @@
 require "rake-pipeline-web-filters"
-
+# For examples on using Rake Pipeline, see: https://github.com/emberjs/todos/blob/master/Assetfile
 
 input "packages"
 output "tests/source"
