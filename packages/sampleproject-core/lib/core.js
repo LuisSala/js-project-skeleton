@@ -67,4 +67,16 @@ SampleProject.moduleFunction = function(obj) {
 	console.log("moduleFunction() called.");
 	return true;
 };
+
+/**
+  @function
+  
+  Returns true.
+
+  @param {Object} obj A parameter
+  @returns {String}
+*/	
+SampleProject.callPrivateMethod = function(obj) {
+	return privateMethod(obj);
+}
 	

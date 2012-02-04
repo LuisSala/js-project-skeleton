@@ -2,7 +2,7 @@ require "rake-pipeline-web-filters"
 # For examples on using Rake Pipeline, see: https://github.com/emberjs/todos/blob/master/Assetfile
 
 input "packages"
-output "tests/source"
+output "tests"
 
 match "*/{lib,tests}/**/*.js" do
   minispade :rewrite_requires => true, :module_id_generator => proc { |input|
@@ -15,11 +15,11 @@ match "*/{lib,tests}/**/*.js" do
   }
 
   concat do |filename|
-    filename =~ %r{/tests/} ? "sampleproject-tests.js" : "sampleproject.js"
+    filename =~ %r{/tests/} ? "source/sampleproject-tests.js" : "source/sampleproject.js"
   end
 end
 
-
+=begin
 # Hack to ignore certain files
 
 match "**/*.{json,md}" do
@@ -33,5 +33,6 @@ end
 match "*/*.js" do
   filter ConcatFilter, "trash"
 end
+=end
 
 # vim: filetype=ruby
